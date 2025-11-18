@@ -51,7 +51,7 @@ template SMTVerify(nLength) {
 
     // Closest_key to leaf
     signal leaf <== Poseidon(3)([key, 1, 1]); // compute the leaf from the key
-    signal isClosestZero <== IsEqual()([key,0]); // check if the inital key is 0, in that case the leaf will be 0 too, not Hash(0,1,1);
+    signal isClosestZero <== IsEqual()([key,0]); // check if the initial key is 0, in that case the leaf will be 0 too, not Hash(0,1,1);
     signal leafOrZero <== leaf * (1 - isClosestZero);
 
     // Verification
