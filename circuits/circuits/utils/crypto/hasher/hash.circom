@@ -11,7 +11,7 @@ include "./sha2/sha384/sha384HashBits.circom";
 include "./sha2/sha512/sha512HashBits.circom";
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Here is secure implementation of sha-1 and sha-2 hash algoritms.
+// Here is secure implementation of sha-1 and sha-2 hash algorithms.
 // There are two versions of hashers - for bits and chunks
 // Bit implementation do padding by itself, so use it if u don`t understand how padding works.
 // Chunk implementation is hashing already padded message, use it if u want to have 1 circuit for many cases of input len,
