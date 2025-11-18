@@ -239,7 +239,7 @@ template EllipticCurvePrecomputePipinger(CHUNK_SIZE, CHUNK_NUMBER, A, B, P, WIND
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Use next templates for elliptic curve oprations
+// Use next templates for elliptic curve operations
 
 /// @title EllipticCurveDouble
 /// @notice Computes the doubling of a point on an elliptic curve using the formula:
@@ -286,7 +286,7 @@ template EllipticCurveDouble(CHUNK_SIZE, CHUNK_NUMBER, A, B, P){
     
     // In circom pairing lib, there were 2 other checks. 
     // First is for each chunk is in range [0, 2**CHUNK_NUMBER).
-    // Which is just overflow check, and it isn`t nessesary because we will get valid results even with overflow inputs
+    // Which is just overflow check, and it isn`t necessary because we will get valid results even with overflow inputs
     // But it`s recommended to do this check for the last point in all ec operations (last add in ecdsa, for example)
     // Second is check for out[0] and out[1] both less than P. Same as previous, this one shouldn`t add any problems, 
     // cause potential overflow over circom field will ruin onCurve check, and just chunk overflow isn`t a real problem for us,
@@ -339,7 +339,7 @@ template EllipticCurveAdd(CHUNK_SIZE, CHUNK_NUMBER, A, B, P){
     onLineCheck.in2 <== in2;
     onLineCheck.in3 <== out;
     
-    // same as previous, this checks should be enought, no need in range checks
+    // same as previous, this checks should be enough, no need in range checks
 }
 
 /// @title EllipticCurveScalarMult
